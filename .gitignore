@@ -17,8 +17,11 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+.env
+
 
 # Model checkpoints
 #(*.h5) # hastag hatane se pehle brackets hata dena  agar model ko gitignore me rakhna hai i.e github pe push nahi karna hai
 *.pkl
 *.ckpt
+
