@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌿 AI Plant Doctor</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">🌱 AI-Powered Plant Disease Detector</h1>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data" class="upload-box">
+      <input type="file" name="file" accept="image/*" required>
+      <button type="submit">🔍 Analyze</button>
+    </form>
+
+    {% if prediction %}
+    <div id="result-card" class="result-card">
+      <img src="{{ img_path }}" alt="Uploaded Image" class="plant-img">
+      <h2>🧬 Disease Detected: <span>{{ prediction }}</span></h2>
+
+      <div class="ai-solution">
+        <h3>🤖 AI Suggested Treatment</h3>
+        <div class="solution-box markdown-body">
+          {{ solution | safe }}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <script>
+    // ✅ Smooth fade-in animation when results appear
+    window.addEventListener('load', () => {
+      const result = document.getElementById('result-card');
+      if (result) {
+        gsap.from(result, { opacity: 0, y: 50, duration: 1, ease: "power3.out" });
+      }
+    });
+  </script>
+</body>
+</html>

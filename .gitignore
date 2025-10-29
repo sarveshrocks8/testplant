@@ -1,0 +1,24 @@
+# Python virtual environment
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter / logs
+.ipynb_checkpoints/
+*.log
+
+# System / IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Model checkpoints
+#(*.h5) # hastag hatane se pehle brackets hata dena  agar model ko gitignore me rakhna hai i.e github pe push nahi karna hai
+*.pkl
+*.ckpt
