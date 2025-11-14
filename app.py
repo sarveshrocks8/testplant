@@ -80,7 +80,7 @@ def predict():
 
     try:
         # Preprocess image
-        img = image.load_img(file_path, target_size=(64, 64))
+        img = image.load_img(file_path, target_size=(128, 128))
         img_array = image.img_to_array(img) / 255.0
         img_array = np.expand_dims(img_array, axis=0)
 
